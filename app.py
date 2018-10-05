@@ -1,6 +1,6 @@
 from flask import Flask
 from yattag import Doc
-from util import get_head, indent_doc
+from util import get_head, indent_doc, get_header
 
 app = Flask(__name__)
 
@@ -11,6 +11,9 @@ def index():
     doc.asis('<!DOCTYPE html>')
     with tag("html", lang="en"):
         doc.asis(get_head("DDraceNetwork"))
+        with tag("body"):
+            with tag("article"):
+                doc.asis(get_header())
     return indent_doc(doc.getvalue())
 
 
