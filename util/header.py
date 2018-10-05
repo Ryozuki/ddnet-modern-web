@@ -68,7 +68,7 @@ def get_header(menu: List[str]=None):
                         line("a", "Releases", href="/releases/")
                     with tag("li"):
                         line("a", "Discord", href="/discord")
-                        text(" / ")
+                    with tag("li"):
                         line("a", "Forum", href="//forum.ddnet.tw/")
                     with tag("li"):
                         line("a", "Downloads", href="/downloads/")
