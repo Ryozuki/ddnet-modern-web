@@ -11,3 +11,6 @@ pip install -r requirements.txt
 ```bash
 FLASK_APP=app.py flask run
 ```
+
+## Credits
+- Ryozuki

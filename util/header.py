@@ -46,6 +46,9 @@ def get_head(title: str, extra_tags: List[str] =None, refresh=False):
 
 
 def get_header(menu: List[str]=None):
+    if menu is None:
+        menu = []
+
     doc, tag, text, line = Doc().ttl()
     stag = doc.stag
 
@@ -80,5 +83,8 @@ def get_header(menu: List[str]=None):
                         line("a", "Skin Database", href="/skins/")
                     with tag("li"):
                         line("a", "Statistics", href="/stats/")
+
+                for x in menu:
+                    doc.asis(x)
 
     return doc.getvalue()
